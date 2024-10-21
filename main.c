@@ -78,11 +78,11 @@ int main()
 void addRecord() {
     if (customerCount < 100) {
         printf("\nEnter name: ");
-        scanf("%[^\n]s", &customers[customerCount].name);
+        scanf("\n%s", customers[customerCount].name);
         printf("\nEnter phone number: ");
-        scanf("\ns", &customers[customerCount].phoneNumber);
+        scanf("\n%s", &customers[customerCount].phoneNumber);
         printf("\nEnter usage: (in minutes) ");
-        scanf("%f", &customers[customerCount].usage);
+        scanf("\n%f", &customers[customerCount].usage);
         customers[customerCount].totalBill = customers[customerCount].usage * 5;
         customerCount++;
     }
