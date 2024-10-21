@@ -14,13 +14,66 @@ int customerCount = 0;
 void addRecord();
 void viewRecords();
 void modifyRecord();
+void viewPayment();
 void searchRecord();
 void deleteRecord();
+void displayMenu()
+{
+    printf("\n1. Add New Record\n");
+    printf("2. View List of Records\n");
+    printf("3. Modify Record\n");
+    printf("4. View Payment\n");
+    printf("5. Search Record\n");
+    printf("6. Delete Record\n");
+    printf("7. Exit\n");
+}
 
 int main(void)
 {
-    printf("Hello, World!\n");
-    return 0;
+    int choice;
+    char phoneNumber[11];
+    while (1) {
+        displayMenu();
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                addRecord();
+            break;
+            case 2:
+                viewRecords();
+            break;
+            case 3:
+                printf(
+                    "\nEnter phone number to modify record: ");
+            scanf("%s", phoneNumber);
+            modifyRecord(phoneNumber);
+            break;
+            case 4:
+                printf(
+                    "\nEnter phone number to view payment: ");
+            scanf("%s", phoneNumber);
+            viewPayment(phoneNumber);
+            break;
+            case 5:
+                printf(
+                    "\nEnter phone number to search record: ");
+            scanf("%s", phoneNumber);
+            searchRecord(phoneNumber);
+            break;
+            case 6:
+                printf(
+                    "\nEnter phone number to delete record: ");
+            scanf("%s", phoneNumber);
+            deleteRecord(phoneNumber);
+            break;
+            case 7:
+                return 0;
+            default:
+                printf("\nInvalid choice! Please try again.\n");
+        }
+    }
 }
 void addRecord() {
     if (customerCount < 100) {
@@ -56,14 +109,30 @@ void modifyRecord(char phoneNumber[]) {
     }
     printf("\nRecord not found");
 }
+
 void searchRecord(char phoneNumber[]) {
-    printf("\nName\tPhone Number\tUsage(min)\tTotal Bill(huf)\n");
+    printf("\nName\tPhone Number\tUsage(min)\tTotal Bill($)\n");
     for (int i = 0; i < customerCount; i++) {
         if (strcmp(customers[i].phoneNumber, phoneNumber) == 0) {
-            printf("%s\t%s\t%.2f\t\t%.2f\n", customers[i].name, customers[i].phoneNumber,customers[i].usage,customers[i].totalBill);
+            printf("%s\t%s\t%.2f\t\t%.2f\n", customers[i].name, customers[i].phoneNumber, customers[i].usage, customers[i].totalBill);
             return;
         }
     }
+    printf("\nRecord not found!\n");
+}
+
+void viewPayment(char phoneNumber[])
+{
+    for (int i = 0; i < customerCount; i++) {
+        if (strcmp(customers[i].phoneNumber, phoneNumber)
+            == 0) {
+            printf("\nTotal Bill for %s: $%.2f\n",
+                   customers[i].name,
+                   customers[i].totalBill);
+            return;
+            }
+    }
+    printf("\nRecord not found!\n");
 }
 void deleteRecord(char phoneNumber[]) {
     for (int i = 0; i < customerCount; i++) {
