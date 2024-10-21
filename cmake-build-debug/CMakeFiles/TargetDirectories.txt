@@ -1,0 +1,3 @@
+/home/oliver/Documents/Programozas/Telecom Billing System/cmake-build-debug/CMakeFiles/Telecom_Billing_System.dir
+/home/oliver/Documents/Programozas/Telecom Billing System/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/oliver/Documents/Programozas/Telecom Billing System/cmake-build-debug/CMakeFiles/rebuild_cache.dir
