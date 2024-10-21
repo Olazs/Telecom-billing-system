@@ -20,7 +20,7 @@ void searchRecord();
 void deleteRecord();
 void displayMenu()
 {
-    printf("\n\n Enter your choice: ");
+    printf("\nPlease use the menu as intended");
     printf("\n1. Add New Record\n");
     printf("2. View List of Records\n");
     printf("3. Modify Record\n");
@@ -28,6 +28,7 @@ void displayMenu()
     printf("5. Search Record\n");
     printf("6. Delete Record\n");
     printf("7. Exit\n");
+    printf("\n\n Enter your choice: ");
 }
 
 int main()
@@ -84,7 +85,7 @@ void addRecord() {
     if (customerCount < 100) {
         printf("\nEnter name: ");
         scanf("\n%s", customers[customerCount].name);
-        printf("\nEnter phone number: ");
+        printf("\nEnter phone number: (11 characters) ");
         scanf("\n%s", &customers[customerCount].phoneNumber);
         printf("\nEnter usage: (in minutes) ");
         scanf("\n%f", &customers[customerCount].usage);
