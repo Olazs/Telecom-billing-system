@@ -20,6 +20,7 @@ void searchRecord();
 void deleteRecord();
 void displayMenu()
 {
+    printf("\n\n Enter your choice: ");
     printf("\n1. Add New Record\n");
     printf("2. View List of Records\n");
     printf("3. Modify Record\n");
@@ -33,41 +34,45 @@ int main()
 {
     printf("\n\n Use the following menu!");
     displayMenu();
-    printf("\n\n Enter your choice: ");
-    scanf("%d", &choice);
     char phoneNumber[11];
     while (choice != 7) {
-        displayMenu();
+        scanf("%d", &choice);
         switch (choice) {
             case 1:
                 addRecord();
+                displayMenu();
             break;
             case 2:
                 viewRecords();
+            displayMenu();
             break;
             case 3:
                 printf(
                     "\nEnter phone number to modify record: ");
             scanf("%s", phoneNumber);
             modifyRecord(phoneNumber);
+            displayMenu();
             break;
             case 4:
                 printf(
                     "\nEnter phone number to view payment: ");
             scanf("%s", phoneNumber);
             viewPayment(phoneNumber);
+            displayMenu();
             break;
             case 5:
                 printf(
                     "\nEnter phone number to search record: ");
             scanf("%s", phoneNumber);
             searchRecord(phoneNumber);
+            displayMenu();
             break;
             case 6:
                 printf(
                     "\nEnter phone number to delete record: ");
             scanf("%s", phoneNumber);
             deleteRecord(phoneNumber);
+            displayMenu();
             break;
             default:
                 printf("\nInvalid choice! Please try again.\n");
