@@ -11,6 +11,7 @@ struct Customer {
 struct Customer customers[100];
 
 int customerCount = 0;
+int choice=0;
 void addRecord();
 void viewRecords();
 void modifyRecord();
@@ -28,15 +29,15 @@ void displayMenu()
     printf("7. Exit\n");
 }
 
-int main(void)
+int main()
 {
-    int choice;
+    printf("\n\n Use the following menu!");
+    displayMenu();
+    printf("\n\n Enter your choice: ");
+    scanf("%d", &choice);
     char phoneNumber[11];
-    while (1) {
+    while (choice != 7) {
         displayMenu();
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
         switch (choice) {
             case 1:
                 addRecord();
@@ -68,19 +69,18 @@ int main(void)
             scanf("%s", phoneNumber);
             deleteRecord(phoneNumber);
             break;
-            case 7:
-                return 0;
             default:
                 printf("\nInvalid choice! Please try again.\n");
         }
     }
+    return 0;
 }
 void addRecord() {
     if (customerCount < 100) {
         printf("\nEnter name: ");
-        scanf("%[^\n]s", customers[customerCount].name);
+        scanf("%[^\n]s", &customers[customerCount].name);
         printf("\nEnter phone number: ");
-        scanf("\ns", customers[customerCount].phoneNumber);
+        scanf("\ns", &customers[customerCount].phoneNumber);
         printf("\nEnter usage: (in minutes) ");
         scanf("%f", &customers[customerCount].usage);
         customers[customerCount].totalBill = customers[customerCount].usage * 5;
