@@ -14,6 +14,8 @@ int customerCount = 0;
 void addRecord();
 void viewRecords();
 void modifyRecord();
+void searchRecord();
+void deleteRecord();
 
 int main(void)
 {
@@ -53,4 +55,26 @@ void modifyRecord(char phoneNumber[]) {
         }
     }
     printf("\nRecord not found");
+}
+void searchRecord(char phoneNumber[]) {
+    printf("\nName\tPhone Number\tUsage(min)\tTotal Bill(huf)\n");
+    for (int i = 0; i < customerCount; i++) {
+        if (strcmp(customers[i].phoneNumber, phoneNumber) == 0) {
+            printf("%s\t%s\t%.2f\t\t%.2f\n", customers[i].name, customers[i].phoneNumber,customers[i].usage,customers[i].totalBill);
+            return;
+        }
+    }
+}
+void deleteRecord(char phoneNumber[]) {
+    for (int i = 0; i < customerCount; i++) {
+        if (strcmp(customers[i].phoneNumber, phoneNumber)==0) {
+            for (int j = i; j < customerCount - 1; j++) {
+                customers[j] = customers[j + 1];
+            }
+            customerCount--;
+            printf("\nRecord deleted");
+            return;
+        }
+    }
+    printf("\nRecord not found\n");
 }
