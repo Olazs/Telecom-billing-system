@@ -33,7 +33,6 @@ void displayMenu()
 
 int main()
 {
-    printf("\n\n Use the following menu!");
     displayMenu();
     char phoneNumber[11];
     while (choice != 7) {
@@ -41,10 +40,14 @@ int main()
         switch (choice) {
             case 1:
                 addRecord();
-                displayMenu();
+            printf("\nPress enter to continue!");
+            getchar(); getchar();
+            displayMenu();
             break;
             case 2:
                 viewRecords();
+            printf("\nPress enter to continue!");
+            getchar();            getchar();
             displayMenu();
             break;
             case 3:
@@ -52,6 +55,8 @@ int main()
                     "\nEnter phone number to modify record: ");
             scanf("%s", phoneNumber);
             modifyRecord(phoneNumber);
+            printf("\nPress enter to continue!");
+            getchar();            getchar();
             displayMenu();
             break;
             case 4:
@@ -59,6 +64,8 @@ int main()
                     "\nEnter phone number to view payment: ");
             scanf("%s", phoneNumber);
             viewPayment(phoneNumber);
+            printf("\nPress enter to continue!");
+            getchar();            getchar();
             displayMenu();
             break;
             case 5:
@@ -66,6 +73,8 @@ int main()
                     "\nEnter phone number to search record: ");
             scanf("%s", phoneNumber);
             searchRecord(phoneNumber);
+            printf("\nPress enter to continue!");
+            getchar();            getchar();
             displayMenu();
             break;
             case 6:
@@ -73,6 +82,8 @@ int main()
                     "\nEnter phone number to delete record: ");
             scanf("%s", phoneNumber);
             deleteRecord(phoneNumber);
+            printf("\nPress enter to continue!");
+            getchar();            getchar();
             displayMenu();
             break;
             default:
