@@ -1,0 +1,3 @@
+C:\Users\Olazs\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\Telecom_Billing_System.dir/objects.a
+C:\Users\Olazs\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\Telecom_Billing_System.dir/objects.a @CMakeFiles\Telecom_Billing_System.dir\objects1.rsp
+C:\Users\Olazs\AppData\Local\Programs\CLion\bin\mingw\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\Telecom_Billing_System.dir/objects.a -Wl,--no-whole-archive -o Telecom_Billing_System.exe -Wl,--out-implib,libTelecom_Billing_System.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Telecom_Billing_System.dir\linkLibs.rsp

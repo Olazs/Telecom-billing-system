@@ -2,7 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Telecom_Billing_System"
+			"path" : "Telecom_Billing_System.exe"
+		},
+		{
+			"path" : "Telecom_Billing_System.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -65,12 +68,16 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
 			}
 		],
 		"language" : "C"
 	},
 	"name" : "Telecom_Billing_System",
-	"nameOnDisk" : "Telecom_Billing_System",
+	"nameOnDisk" : "Telecom_Billing_System.exe",
 	"paths" : 
 	{
 		"build" : ".",
